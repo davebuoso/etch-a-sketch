@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+header,
+footer {
+  padding: 32px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+button {
+  background-color: bisque;
+  border: 1px solid bisque;
+  padding: 16px 32px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+  background-color: bisque;
+  padding: 32px;
+}
+
+.container {
+  display: grid;
+  margin: 0 auto;
+  height: 500px;
+  width: 500px;
+}
+
+.square {
+  outline: 1px solid lightblue;
+  transition: background-color 100ms ease-out;
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  border: 1px solid grey;
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 64px 32px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  z-index: 99;
+}
+
+.blur {
+  display: none;
+  position: absolute;
+  z-index: 9;
+}
+
+body:has(.modal.show) .blur {
+  display: block;
+  height: 100vh;
+  width: 100vh;
+  background-color: rgba(0, 0, 139, 0.5);
+}
+
+.modal.show {
+  display: flex;
+  align-content: end;
+  flex-direction: column;
+}
+
+.modal label {
+  margin: 0 auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 50%;
+}
